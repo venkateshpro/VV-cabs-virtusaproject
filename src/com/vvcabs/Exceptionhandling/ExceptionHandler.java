@@ -1,4 +1,4 @@
-package Exceptionhandling;
+package com.vvcabs.Exceptionhandling;
 
 public class ExceptionHandler extends Exception {
 	
