@@ -5,19 +5,20 @@ import java.util.Scanner;
 
 import com.vvcabs.model.Cab;
 import com.vvcabs.model.Driver;
-import com.vvcabs.model.user;
+import com.vvcabs.model.Customer;
 
 public class servicevvcabsImp implements servicevvcabs {
 	
 	ArrayList<Cab> cabs= new ArrayList();
 	
-	ArrayList <user>NewUser= new ArrayList();
+	ArrayList <Customer> NewUser = new ArrayList();
 
 	Scanner sc= new Scanner(System.in);
 
 
 	@Override
 	public void add_newCab() throws Exception {
+
 		System.out.println("Enter Cab Number ");
 		int c_no= sc.nextInt();
 		
@@ -40,14 +41,40 @@ public class servicevvcabsImp implements servicevvcabs {
 	
 	
 	}
+	
+	public void add_newCustomer() throws Exception{
+		//System.out.println("Plz enter the details ");
+		System.out.println("Enter Customer Id");
+		int u_id =sc.nextInt();
+		
+		System.out.println("Enter Customer Email");
+		String u_email= sc.next();
+		
+		System.out.println("Enter Customer Password");
+		String u_psw=sc.next();
+		
+		System.out.println("Enter Customer Name");
+		String u_name =sc.next();
+		
+		System.out.println("Enter Customer Phone");
+		long u_phone =sc.nextLong();
+		
+		
+		
+	
+		
+		Customer u1= new Customer(u_id,u_email,u_name,u_phone,u_psw);
+		
+		NewUser.add(u1);
+		
+		System.out.println(" Customer Added successfully");
+			
+		
+	}
 
 	@Override
 	public void requestCab() throws Exception {
-		
-		
-		
-		
-		
+			
 		
 //		for(Object Cablist:cabs) {
 //			System.out.println(Cablist);
@@ -66,29 +93,17 @@ public class servicevvcabsImp implements servicevvcabs {
 
 		}
 	}
-	
-	public void add_newCustomer() throws Exception{
-		//System.out.println("Plz enter the details ");
-		System.out.println("Enter Customer Id");
-		int u_id =sc.nextInt();
+	public void get_user_by_id() {
 		
-		System.out.println("Enter Customer Name");
-		String u_name =sc.next();
-		
-		System.out.println("Enter Customer Phone");
-		long u_phone =sc.nextLong();
-		
-		System.out.println("Enter Customer Password");
-		String u_psw=sc.next();
-		
-		user u1= new user(u_id,u_name,u_phone,u_psw);
-		
-		NewUser.add(u1);
-		
-		System.out.println(" Customer Added successfully");
+		for(Customer users: NewUser) {
 			
-		
+			
+			
+		}
 	}
+	
+
+
 	
 	
 }
