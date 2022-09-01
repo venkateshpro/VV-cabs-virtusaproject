@@ -6,7 +6,7 @@ package com.vvcabs.model;
 
 public class Customer {
 	private int user_Id;
-	private String User_email;
+	private String user_email;
 	private String user_psw;
 	long user_phone;
 	String user_name;
@@ -14,32 +14,32 @@ public class Customer {
 	
 	
 	
+
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Customer(int user_Id, String user_email, String user_psw, long user_phone, String user_name) {
 		super();
 		this.user_Id = user_Id;
-		User_email = user_email;
+		user_email = user_email;
 		this.user_psw = user_psw;
 		this.user_phone = user_phone;
 		this.user_name = user_name;
 	}
-	
 
 	@Override
 	public String toString() {
-		return "Customer [user_Id=" + user_Id + ", User_email=" + User_email + ", user_psw=" + user_psw
+		return "Customer [user_Id=" + user_Id + ", User_email=" + user_email + ", user_psw=" + user_psw
 				+ ", user_phone=" + user_phone + ", user_name=" + user_name + "]";
 	}
 
 	public String getUser_email() {
-		return User_email;
+		return user_email;
 	}
 	public void setUser_email(String user_email) {
-		User_email = user_email;
+		user_email = user_email;
 	}
 	public int getUser_Id() {
 		return user_Id;

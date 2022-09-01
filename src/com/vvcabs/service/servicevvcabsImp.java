@@ -1,17 +1,22 @@
 package com.vvcabs.service;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import com.vvcabs.model.Cab;
-import com.vvcabs.model.Driver;
 import com.vvcabs.model.Customer;
 
 public class servicevvcabsImp implements servicevvcabs {
 	
+	String email=null;
+	String Pass=null;
+	
+
 	ArrayList<Cab> cabs= new ArrayList();
 	
-	ArrayList <Customer> NewUser = new ArrayList();
+	Customer cus= new Customer();
+	LinkedList <Customer> NewUser = new LinkedList();
 
 	Scanner sc= new Scanner(System.in);
 
@@ -26,13 +31,14 @@ public class servicevvcabsImp implements servicevvcabs {
 		String c_type= sc.next();
 		
 		System.out.println("Enter Cab Driver Name ");
-		String c_DriverName= sc.next();
+		String c_driverName= sc.next();
 		
 		System.out.println("Enter Driver Phone Number");
-		String c_driverPhoneNo= sc.next();
-		Cab c= new Cab(c_no,c_type);
-		
-		Driver dr= new Driver(c_DriverName,c_driverPhoneNo,c);
+		String c_driverPhone= sc.next();
+	
+		Cab c=  new Cab(c_no,c_type,c_driverName,c_driverPhone);
+
+		//Driver dr= new Driver(c_DriverName,c_driverPhoneNo,c);
 		
 		
 		cabs.add(c);
@@ -59,15 +65,22 @@ public class servicevvcabsImp implements servicevvcabs {
 		System.out.println("Enter Customer Phone");
 		long u_phone =sc.nextLong();
 		
-		
-		
 	
-		
-		Customer u1= new Customer(u_id,u_email,u_name,u_phone,u_psw);
+		Customer u1= new Customer(u_id,u_email,u_psw,u_phone,u_name);
 		
 		NewUser.add(u1);
 		
 		System.out.println(" Customer Added successfully");
+		
+		email=u1.getUser_email();
+		Pass=u1.getUser_psw();
+		System.out.println(email);
+		System.out.println(Pass);
+		
+		
+		
+		
+		
 			
 		
 	}
@@ -95,11 +108,14 @@ public class servicevvcabsImp implements servicevvcabs {
 	}
 	public void get_user_by_id() {
 		
+	
+	}
+	public void getListofusers() {
 		for(Customer users: NewUser) {
 			
+			System.out.println(users);
 			
-			
-		}
+		} 
 	}
 	
 

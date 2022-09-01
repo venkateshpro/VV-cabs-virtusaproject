@@ -7,6 +7,21 @@ public class Drivertodo {
 	Scanner sc= new Scanner(System.in);
 	servicevvcabsImp simpl= new servicevvcabsImp();
 
+	validations val= new validations();
+	public void driverLogin() throws Exception {
+		int ch2;
+		 System.out.println(" Choose 1 For New Cab \n choose 2 for Existing Cab");
+		 ch2=sc.nextInt();
+		 if(ch2==1) {
+			simpl.add_newCab();
+		 }
+		 else {
+			drivertodo();
+			 
+		 }
+		
+	}
+
 
 		
 		// it will check the request and accept driver gets user details

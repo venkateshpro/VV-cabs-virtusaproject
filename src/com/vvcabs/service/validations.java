@@ -10,20 +10,39 @@ public class validations {
 	Scanner sc= new Scanner(System.in);
 
 	
-	Customer cus= new Customer();
 	
-	public void validate_user() {
+	public boolean validate_user() {
 		
-		email=sc.next();
-		pasword= sc.next();
-		
-		if (email.equals(cus.getUser_email()) && pasword.equals(cus.getUser_psw())) {
-			
+		 System.out.println("Enter Customer email");
+		 String email=sc.next();
+		 System.out.println("enter Customer Password");
+		 String pasword= sc.next();
+		 if (email.equals("v@12") && pasword.equals("1111")) {
+			return true;
+		 }
+		 else
+		 {
+			return false;	
 		}
-		
 		
 		
 		
 	}
 
+	public boolean validate_driver() {
+
+		 System.out.println("Enter Driver  email");
+		 String email=sc.next();
+		 System.out.println("enter Driver Password");
+		 String pasword= sc.next();
+		 if (email.equals("d@12") && pasword.equals("1111")) {
+			return true;
+		 }
+		 else
+		 {
+			return false;	
+		}
+		
+		
+	}
 }
