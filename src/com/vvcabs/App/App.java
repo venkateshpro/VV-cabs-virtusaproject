@@ -1,12 +1,21 @@
 package com.vvcabs.App;
 
+import java.sql.SQLException;
+
 import com.vcabs.Controller.Login;
 
 public class App {
 	public static void main(String[] args) {
 		Login l= new Login();
-		l.loginn();
-		
+		try {
+			l.loginn();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		

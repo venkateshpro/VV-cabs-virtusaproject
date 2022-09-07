@@ -1,41 +1,39 @@
 package com.vcabs.Controller;
 
+
 import java.sql.SQLException;
 import java.util.Scanner;
-
-import com.vvcabs.model.Customer;
 import com.vvcabs.service.Admin;
 import com.vvcabs.service.Customertodo;
 import com.vvcabs.service.Drivertodo;
-import com.vvcabs.service.servicevvcabsImp;
 import com.vvcabs.service.validations;
 
 
 
+
 public class Login {
+	String email;
+	String password;
 	
 	
-	public void loginn() {
+	public void loginn() throws ClassNotFoundException, SQLException  {
 		
 		
 		Scanner sc= new Scanner(System.in);
 		Admin ad = new Admin();
 		Drivertodo drtodo= new Drivertodo();
 		Customertodo custodo= new Customertodo();
-		Customer cus= new Customer();
-		servicevvcabsImp simpl = new servicevvcabsImp();
-		
+		validations v=new validations();
 		
 		String ch;
 		while(true) {
 			
 			
 			 System.out.println();
-			 System.out.println("*** welcome to vv Cabs online booking ***");
-			 System.out.println("Choose the option to perform");
-			 System.out.println("");
+			 System.out.println("***  welcome to vv Cabs online booking ***");
+			 System.out.println("Choose the option to perform \n");
 			 System.out.println("Enter customer for customer Login");
-			 System.out.println("enter driver for Driver Login ");
+			 System.out.println("Enter driver for driver Login ");
 			 System.out.println("Enter admin for Admin Login ");
 			 
 			 ch=sc.nextLine();
@@ -43,16 +41,18 @@ public class Login {
 			 switch(ch) {
 			 case "customer":
 				try {
-					custodo.CusLogin();
-				} catch (Exception e) {
+					v.validate_user();
+				} catch (Exception e1) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					e1.printStackTrace();
 				}
+	
+					
 				 break;
 				 
 			 case "driver":
-				try {
-					drtodo.driverLogin();
+				 try {
+					v.validate_driver();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -60,15 +60,15 @@ public class Login {
 				 break;
 				 
 			 case "admin":
-				 try {
-					ad.admin();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				 boolean a= v.validate_admin();	
+					if(a) {
+						ad.admin();
+					}
+					else {
+						
+
+						System.out.println("-----Wrong  Email or  password of Admin Login-----");
+					}
 				 break;
 				 
 				 
@@ -76,8 +76,9 @@ public class Login {
 				 
 			 }
 			 
-			
+		//sc.close();	
 		}
+		
 		
 	}
 	

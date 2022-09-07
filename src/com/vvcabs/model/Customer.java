@@ -5,9 +5,9 @@ package com.vvcabs.model;
  */
 
 public class Customer {
-	private int user_Id;
-	private String user_email;
-	private String user_psw;
+	 int user_Id;
+	String user_email;
+	String user_psw;
 	long user_phone;
 	String user_name;
 	

@@ -6,9 +6,27 @@ package com.vvcabs.model;
 public class booking {
 	
 	private int b_Id;
+	
 	private String pickup_location;
+	
 	private String drop_location;
 	
+	private String price;
+	
+	public booking() {
+		super();
+		this.b_Id = b_Id;
+		this.pickup_location = pickup_location;
+		this.drop_location = drop_location;
+		this.price=price;
+	}
+	
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public int getB_Id() {
 		return b_Id;
 	}
@@ -30,14 +48,10 @@ public class booking {
 	@Override
 	public String toString() {
 		return "booking [b_Id=" + b_Id + ", pickup_location=" + pickup_location + ", drop_location=" + drop_location
-				+ "]";
+				+ ", price=" + price + "]";
 	}
-	public booking(int b_Id, String pickup_location, String drop_location) {
-		super();
-		this.b_Id = b_Id;
-		this.pickup_location = pickup_location;
-		this.drop_location = drop_location;
-	}
+	
+	
 	
 	//driver details from cab.java class;
 	

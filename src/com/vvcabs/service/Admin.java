@@ -8,12 +8,12 @@ import com.vcabs.Controller.Login;
 import com.vvcabs.dao.dao;
 import com.vvcabs.model.Customer;
 
+
 public class Admin {
 	
 		Scanner sc= new Scanner(System.in);
 		dao d= new dao();
 		
-		servicevvcabsImp simpl= new servicevvcabsImp();
 		Login l= new Login();
 		
 		public void admin() throws ClassNotFoundException, SQLException {
@@ -35,14 +35,14 @@ public class Admin {
 					 
 					
 				 case 1:
-					d.addcab();
+					d.add_driver_cab();;;
 					 break;
 	
 				 case 2:
-					 d.getcabdetails();
+					 d.get_driver_cab_details();;
 					 break;
 				 case 3:
-					 //d.customerslist();
+					 d.listof_bookings();
 					 break;
 				 case 4:
 					 d.customerslist();

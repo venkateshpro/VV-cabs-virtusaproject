@@ -5,11 +5,11 @@ package com.vvcabs.model;
 
 public class Cab {
 	
-	private long cab_no;
-	private String cab_type;
+	private int cab_no;
+	private int cab_type;
 	String driver_name;
 	String driver_phonenum;
-	
+	int status;
 	
 	
 	
@@ -19,14 +19,22 @@ public class Cab {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cab(long cab_no, String cab_type, String driver_name, String driver_phonenum) {
+	public Cab(int cab_no, int c_type, String driver_name, String driver_phonenum,int status) {
 		super();
 		this.cab_no = cab_no;
-		this.cab_type = cab_type;
+		this.cab_type = c_type;
 		this.driver_name = driver_name;
 		this.driver_phonenum = driver_phonenum;
 	}
 	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	public String getDriver_name() {
 		return driver_name;
 	}
@@ -40,32 +48,29 @@ public class Cab {
 		this.driver_phonenum = driver_phonenum;
 	}
 	
-	public long getCab_no() {
+	public int getCab_no() {
 		return cab_no;
 	}
-	public void setCab_no(long cab_no) {
+	public void setCab_no(int cab_no) {
 		this.cab_no = cab_no;
 	}
-	public String getCab_type() {
+	public int getCab_type() {
 		return cab_type;
 	}
-	public void setCab_type(String cab_type) {
+	public void setCab_type(int cab_type) {
 		this.cab_type = cab_type;
+	}
+
+	@Override
+	public String toString() {
+		return "Cab [cab_no=" + cab_no + ", cab_type=" + cab_type + ", driver_name=" + driver_name
+				+ ", driver_phonenum=" + driver_phonenum + ", status=" + status + "]";
 	}
 	
 	
 	
 
-	@Override
-	public String toString() {
-		return "cab [cab_no=" + cab_no + ", cab_type=" + cab_type + "]";
-	}
-	public Cab(long cab_no, String cab_type,  String driver_name, long driver_phoneNo) {
-		super();
-		this.cab_no = cab_no;
-		this.cab_type = cab_type;
-		
-	}
+	
 	
 	
 	
